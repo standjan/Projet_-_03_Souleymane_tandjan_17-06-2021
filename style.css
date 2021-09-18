@@ -1,0 +1,516 @@
+
+Html, body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*{text-decoration: none;}
+@media screen and (min-width:1295px) {
+   body {
+       max-width: 100%;
+       display: flex;
+       flex-direction: column;
+       min-height: 100vh;
+   }
+   .Map_recherche {
+    width: auto;
+   }
+   #Restaurants {
+       flex: 1;
+   }
+}
+@media screen and (max-width: 990px) {
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .Ensemble_box {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .Map_recherche {
+        width: 100%;
+    }
+    .Cartes_Menu {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
+@media screen and (min-width:810px) {
+    .Ensemble_box {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .Map_recherche {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 770px) {
+    .Ensemble_box {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .Cartes_Menu {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
+@media screen and (max-width: 600px) {
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .titre_para_explore {
+        width: auto;
+    }
+    .Ensemble_box {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .Cartes_Menu {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .Map_recherche {
+        width: 100%;
+    }  
+}
+/**Ensemble des h1 h2 h3***/
+h1, h2 {
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
+}
+/**Header**/
+.fa-arrow {
+    position: absolute;
+    color:black;
+    left: 20px;
+    top: 20px;
+    transform: translateY(-50%);
+    }
+#img_logo {
+    height: 20px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    box-shadow: 0px 1px 5px 0px
+}
+/**Maps et Recherche**/
+input.text {
+    font-family: FontAwesome, "Roboto";
+    text-decoration: inherit;
+    font-weight: bold;
+}
+.Map_recherche {
+    text-align: center;
+    width: auto;
+    padding: 15px;
+    border: none;
+    background-color: #EAEAEA;
+}
+/**Titre et Explorateur**/
+.titre_para_explore {
+    width: auto;
+    background-color: #F6F6F6;
+    text-align: center;
+    padding: 30px 20px 30px 20px;
+}
+.titre_para_explore p {
+    margin: 20px;
+}
+/**Button de l'explorateur**/
+.button:hover {
+    cursor: pointer;
+    background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+    box-shadow: 1px 4px 8px 0 rgba(0, 0, 0, 0.5);
+    }
+.button {
+    border: none;
+    background: linear-gradient(to bottom right, #FF79DA, #9356DC, transparent);
+    color: #FFFFFF;
+    padding: 15px 30px 15px 30px;
+    margin: 10px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: all 400ms linear;
+    text-decoration: none;
+    box-shadow: 1px 4px 0 0 rgba(156, 117, 117, 0.3);
+}
+/**Fonctionnement**/
+.Fonction {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    margin: 15px 0 15px 0;
+}
+/**Survol**/
+.box:hover {
+    cursor: pointer;
+    background-color: #f4eefc;
+}
+/**Tout les Box**/
+.Ensemble_box {
+    display: flex;
+    align-items: center;
+    width: auto;
+}
+
+/**fONCTION A**/
+.Fonction a {
+    width: 230px;
+}
+/**LES BOXS**/
+.box {
+    display: flex;
+    flex-direction: row;
+    background-color: #F6F6F6;
+    border-radius: 20px;
+    box-shadow: 1px 4px 8px 0 rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 15px 5px 5px 20px;
+}
+/**Les Numeros**/
+.Number {
+    color: #FFFFFF;
+    font-size: 11px;
+    background-color: #9356DC;
+    position: relative;
+    padding: 4px 7px 3px 7px;
+    left: -30px;
+    border-radius: 50%;
+}
+/**Les icones**/
+.box .fas {
+    color: #7e7e7e;
+    width: 15px;
+}
+/**les TEXTES**/
+.Explication {
+    color: black;
+    margin-left: 15px;
+    font-weight: bold;
+}
+/**Restaurants**/
+#Restaurants {
+    flex: 1;
+    flex-direction: column;
+    background-color: #F6F6F6;
+    padding: 35px 0px 40px 0px;
+}
+h2 {
+    padding-left: 20px;
+}
+/**La carte des menu**/
+.Cartes_Menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+}
+/**les differents menus**/
+.Carte {
+    background-color: white;
+    border-radius: 15px;
+    margin: 20px;
+    height: 210px;
+    position: relative;
+    box-shadow: 1px 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+/**Images des cartes**/
+.Carte img {
+    width: 100%;
+    height: 65%;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+}
+/**La description des menus**/
+.Description {
+    height: 35%;
+    line-height: 5px;
+    color: black;
+    margin: 10px; 
+}
+/**Text_Nouveau**/
+.New {
+    top: 10px;
+    right: 10px;
+    width: 60px;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 2px;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    color: #008766;
+    background-color: #99e2d0; 
+}
+/**les Coeurs**/
+.heart {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    font-size: 25px;
+    transform: translateY(-50%);
+}
+.heart .far:hover{
+    cursor: pointer;
+    background: transparent;
+}
+.heart .far {
+    transition: all 200ms linear;
+    z-index: 10;
+    background: black;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.heart .fas:hover {
+    cursor: pointer;
+    background: linear-gradient( #ff79da, #9356dc, transparent);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #FF79DA;
+}
+.heart .fas {
+    color: transparent;
+    position: absolute;
+    inset: 0px;
+    font-size: 1.5rem;
+    text-align: center;
+    }
+/**Organisation des menus**/
+.Cartes_Menu a {
+    flex: auto;
+    width: 90%;
+    margin-bottom: 20px;
+}
+/**Footer**/
+.Footer {
+    list-style: none;
+    text-decoration: none;
+    background-color: #353535;
+    padding: 20px;
+    color: #FFFFFF;
+    }
+.Titre_pied {
+    font-family: 'Shrikhand', cursive;
+    margin-bottom: 20px;
+    height: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #FFFFFF;
+}
+.Text_pied {
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+.Text_pied .fas {
+    color: #FFFFFF;
+}
+.Text_pied a {
+    color: #FFFFFF;
+}
+/**Menu la palette**/
+@media screen and (min-width:1024px) {
+    .Menu {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .carte {
+        flex: 1;
+        margin: 0 15px 0 15px;
+    }
+    .Liste {
+        margin-bottom: 30px;
+    }
+}
+/**Banner**/
+.banner {
+    max-width: 100%;
+    position: relative;
+    margin-bottom: 35px;
+}
+.banner img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+.banner .Titre {
+    background-color: #F6F6F6;
+    border-radius: 40px 40px 0 0;
+    width: 100%;
+    position: absolute;
+    bottom: -50px;
+}
+.banner h1 {
+    font-size: 26px;
+    font-weight: normal;
+    padding: 10px 10px 0 20px;
+    font-family: 'Shrikhand', cursive;
+}
+
+/**Heart**/
+.banner .heart {
+    font-size: 25px;
+    position: absolute;
+    right: 30px;
+}
+.banner .heart .far:hover{
+    cursor: pointer;
+    background: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.banner .heart .far {
+    transition: all 200ms linear;
+    z-index: 10;
+    background: black;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.banner .heart .fas:hover {
+    cursor: pointer;
+    background: linear-gradient( #ff79da, #9356dc, transparent);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #FF79DA;
+}
+.banner .heart .fas {
+    color: transparent;
+    position: absolute;
+    inset: 0px;
+    font-size: 1.5rem;
+    text-align: center;
+    }
+/**Menu**/
+.Menu {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #F6F6F6;
+    padding:  2px 10px 0 10px;
+}
+/**Carte**/
+.carte {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.Liste {
+    margin-bottom: 15px;
+    display: flex;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 15px;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    animation: loading-list 0.6s both;
+}
+/****/
+@keyframes loading-Liste {
+    0% {
+        opacity: 0;
+        transform: translateY(50%)
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+.Liste .Description {
+    flex: 1;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+ 
+}
+.Liste .Description h4, p {
+    margin: 0px;
+    padding: 10px;
+}
+
+.Liste .Prix {
+    font-weight: bold;
+    font-size: 15px;
+    align-self: flex-end;
+    margin: 0 38px 13px 0;
+}
+.Liste:hover > .check {
+    margin-right: 0px;
+}
+.Liste .check {
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 0px 15px 15px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: -75px;
+    transition-duration: 0.8s;
+    background-color: #99E2D0;
+    color: #FFFFFF;
+}
+.Liste .check {
+    transition: all 400ms ease-in-out;
+    transform: rotate(360deg);
+}
+
+.ordre {
+    background-color: #F6F6F6;
+    text-align: center;
+    padding: 20px 0px 30px 0px;
+}
+.ordre button:hover {
+    cursor: pointer;
+    background: linear-gradient(to bottom right, #9356DC, #FF79DA);
+    box-shadow: 1px 4px 8px 0px rgba(0, 0, 0, 0.5);
+}
+.ordre button {
+    border: none;
+    background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+    color: #FFFFFF;
+    padding: 15px 30px 15px 30px;
+    margin: 10px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: bold;
+    box-shadow: 1px 4px 8px 0px rgba(0, 0, 0, 0.3);
+    transition: all 400ms linear;
+}
