@@ -14,10 +14,14 @@ Html, body {
        min-height: 100vh;
    }
    .Map_recherche {
-    width: auto;
+       width: auto;
    }
-   #Restaurants {
-       flex: 1;
+   .Liste .description h3, .Liste .description p {
+    margin: 0px;
+    padding: 10px 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
    }
 }
 @media screen and (max-width: 990px) {
@@ -39,6 +43,17 @@ Html, body {
         flex-direction: column;
         flex-wrap: wrap;
     }
+    .Fonction {
+        display: flex;
+        flex-direction: column;
+    }
+    .Liste .description h3, .Liste .description p {
+        margin: 0px;
+        padding: 10px 5px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
 }
 @media screen and (min-width:810px) {
     .Ensemble_box {
@@ -47,6 +62,16 @@ Html, body {
     }
     .Map_recherche {
         width: 100%;
+    }
+    .Fonction {
+        display: flex;
+        flex-direction: column;
+    }
+    .Liste .Description {
+        display: flex;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
 }
 @media screen and (max-width: 770px) {
@@ -59,6 +84,20 @@ Html, body {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
+    }
+    .Liste .description h3, .Liste .description p {
+        margin: 0px;
+        padding: 10px 5px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    h4 {
+        text-align: left;
+    }
+    .Les_a_pied {
+        display: flex;
+        flex-direction: column;
     }
 }
 @media screen and (max-width: 600px) {
@@ -82,7 +121,41 @@ Html, body {
     }
     .Map_recherche {
         width: 100%;
-    }  
+    }
+    .Liste .description h3, .Liste .description p {
+        margin: 0px;
+        padding: 10px 5px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    #footer {
+        color: #353535;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+    #Footer .Logo {
+        position: absolute;
+        left: 45%;
+        top:20px;
+    }
+    #Footer div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    #Footer .Logo-text {
+        color: #FFFFFF;
+        font-size: 16px;
+        font-family: "Shrikhand", cursive;
+        width: 100px;
+    }
+    #Footer .A_contact a {
+        padding: 5px;
+        margin-top: 0px;
+    }
+
 }
 /**Load Spiner**/
 .spinner-box {
@@ -100,7 +173,6 @@ Html, body {
 }
 @keyframes bounce {
     100% {
-
         transform: translate3d(0, -4rem, 0);
         color: #FF79DA;
         opacity: 0;
@@ -141,21 +213,16 @@ Html, body {
 .d {
     animation: bounce 1.6s ease 1.6s infinite alternate;
 }
-/**Ensemble des h1 h2 h3***/
-h1, h2 {
+h2, h3 {
+    font-size: 16px;
     font-weight: bold;
-    font-size: 15px;
-    text-decoration: none;
+}
+p {
+    font-size: 16px;
+    padding-left: 5px;
 }
 /**Header**/
-.fa-arrow {
-    position: absolute;
-    color:black;
-    left: 20px;
-    top: 20px;
-    transform: translateY(-50%);
-    }
-#img_logo {
+.img_logo {
     height: 20px;
     width: auto;
     display: flex;
@@ -163,72 +230,96 @@ h1, h2 {
     position: relative;
     padding-top: 15px;
     padding-bottom: 15px;
-    box-shadow: 0px 1px 5px 0px
+    box-shadow: 0px 1px 7px 0px rgba(58, 40, 40, 0.2)
 }
 /**Maps et Recherche**/
-input.text {
-    font-family: FontAwesome, "Roboto";
-    text-decoration: inherit;
-    font-weight: bold;
-}
 .Map_recherche {
     text-align: center;
     width: auto;
-    padding: 15px;
+    padding: 10px;
     border: none;
     background-color: #EAEAEA;
 }
+.search {
+    width: auto;
+    background-color: #EAEAEA;
+    margin: 0px;
+    padding: 0px;
+}
+input.text {
+    text-align: center;
+    width: 140px;
+    line-height: 30px;
+    font-size: 1rem;
+    border: 0px;
+    border-radius: 5px;
+    background-color: #EAEAEA;
+}
 /**Titre et Explorateur**/
-.titre_para_explore {
+.titre {
     width: auto;
     background-color: #F6F6F6;
     text-align: center;
-    padding: 30px 20px 30px 20px;
+    padding: 15px 10px 60px 10px;
 }
-.titre_para_explore p {
-    margin: 20px;
+.titre h1 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+.titre p {
+    margin-top: 0px;
+    font-size: 20px;
+    font-weight: bold;
 }
 /**Button de l'explorateur**/
+.button {
+    display: block;
+    color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+.button .text {
+    font-weight: bold;
+}
 .button:hover {
     cursor: pointer;
-    background: linear-gradient(to bottom right, #FF79DA, #9356DC);
-    box-shadow: 1px 4px 8px 0 rgba(0, 0, 0, 0.5);
-    }
+    background: linear-gradient(to bottom right, #9356DC, #FF79DA);
+    box-shadow: 1px 4px 8px 0px rgba(0, 0, 0, 0.5);
+}
 .button {
-    border: none;
-    background: linear-gradient(to bottom right, #FF79DA, #9356DC, transparent);
-    color: #FFFFFF;
-    padding: 15px 30px 15px 30px;
-    margin: 10px;
+    font-weight: 400;
+    color: white;
+    background: linear-gradient(#FF79DA, #9356DC);
+    line-height: 49px;
+    width: 210px;
+    height: 49px;
     border-radius: 30px;
-    font-size: 13px;
-    font-weight: bold;
-    transition: all 400ms linear;
-    text-decoration: none;
-    box-shadow: 1px 4px 0 0 rgba(156, 117, 117, 0.3);
+    margin: 30px auto 0px auto;
+    box-shadow: 0px 0px 5px #a5a5a5;
+    transition: all 300ms ease-out;
+    position: relative;
+    z-index: 1;
 }
 /**Fonctionnement**/
 .Fonction {
     display: flex;
     flex-direction: column;
     padding: 8px;
-    margin: 15px 0 15px 0;
+    margin: 20px 0 45px 0;
 }
-/**Survol**/
-.box:hover {
-    cursor: pointer;
-    background-color: #f4eefc;
+/**fONCTION A**/
+.Fonction a {
+    width: 230px;
 }
 /**Tout les Box**/
 .Ensemble_box {
     display: flex;
     align-items: center;
     width: auto;
-}
-
-/**fONCTION A**/
-.Fonction a {
-    width: 230px;
 }
 /**LES BOXS**/
 .box {
@@ -255,11 +346,20 @@ input.text {
     color: #7e7e7e;
     width: 15px;
 }
+/**Survol**/
+.box:hover {
+    cursor: pointer;
+    background-color: #f4eefc;
+}
+.box:hover .fas{
+    color: #9356DC;
+}
 /**les TEXTES**/
 .Explication {
     color: black;
     margin-left: 15px;
     font-weight: bold;
+    font-size: 16px;
 }
 /**Restaurants**/
 #Restaurants {
@@ -268,9 +368,10 @@ input.text {
     background-color: #F6F6F6;
     padding: 35px 0px 40px 0px;
 }
-h2 {
-    padding-left: 20px;
+#Restaurants h2 {
+    padding-left: 5px;
 }
+
 /**La carte des menu**/
 .Cartes_menu {
     display: flex;
@@ -279,11 +380,17 @@ h2 {
     width: 100%;
     height: auto;
 }
+/**Organisation des menus**/
+.Cartes_menu a {
+    flex: auto;
+    width: 100%;
+   
+}
 /**les differents menus**/
 .Carte {
     background-color: white;
     border-radius: 15px;
-    margin: 20px;
+    margin: 10px;
     height: 210px;
     position: relative;
     box-shadow: 1px 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -300,7 +407,8 @@ h2 {
     height: 35%;
     line-height: 5px;
     color: black;
-    margin: 10px; 
+    margin: 10px;
+    margin-left: 10px; 
 }
 /**Text_Nouveau**/
 .New {
@@ -318,6 +426,7 @@ h2 {
 }
 /**les Coeurs**/
 .first-heart {
+    color: transparent;
     position: absolute;
     bottom: 15px;
     right: 20px;
@@ -325,8 +434,11 @@ h2 {
     transform: translateY(-50%);
 }
 .first-heart .far:hover{
-    cursor: pointer;
-    background: transparent;
+    background: linear-gradient(#FF79DA, #9356DC);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 10;
 }
 .first-heart .far {
     transition: all 200ms linear;
@@ -336,57 +448,45 @@ h2 {
     -webkit-text-fill-color: transparent;
 }
 .first-heart .fas:hover {
-    cursor: pointer;
-    background: linear-gradient( #ff79da, #9356dc, transparent);
+    transition: 300ms ease-in-out;
+    font-size: 25px;
+    background: linear-gradient(#FF79DA, #9356DC);
+    background-clip: border-box;
     background-clip: border-box;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: #FF79DA;
+    -webkit-text-fill-color: transparent;
+    transform-origin: bottom;
+    transform: scale(1.1);
+    z-index: 1;
 }
 .first-heart .fas {
     color: transparent;
     position: absolute;
     inset: 0px;
-    font-size: 1.5rem;
+    font-size: 25px;
     text-align: center;
-    }
-/**Organisation des menus**/
-.Cartes_menu a {
-    flex: auto;
-    width: 90%;
-    margin-bottom: 20px;
 }
+
 /**Footer**/
-.Footer {
-    list-style: none;
-    text-decoration: none;
+#Footer {
     background-color: #353535;
     padding: 20px;
+}
+#Footer h4 {
+    margin-top: 0px;
     color: #FFFFFF;
-    }
-.Titre_pied {
-    font-family: 'Shrikhand', cursive;
-    margin-bottom: 20px;
-    height: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    font-family: 'shrikhand', cursive;
+    text-align: center;
+    font-size: 20px;
+}
+#Footer a {
     color: #FFFFFF;
 }
-.Text_pied {
+.Les_a_pied {
     color: #FFFFFF;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    
-}
-.Text_pied .fas {
-    color: #FFFFFF;
-}
-.Text_pied a {
-    color: #FFFFFF;
 }
 /**Menu la palette**/
 @media screen and (min-width:1024px) {
@@ -404,6 +504,14 @@ h2 {
     .Liste {
         margin-bottom: 30px;
     }
+}
+/**Fleche retour**/
+.fa-arrow {
+    position: absolute;
+    color:black;
+    left: 20px;
+    top: 20px;
+    transform: translateY(-50%);
 }
 /**Banner**/
 .banner {
@@ -438,9 +546,11 @@ h2 {
 }
 .heart .far:hover{
     cursor: pointer;
-    background: transparent;
+    background: linear-gradient(#FF79DA, #9356DC);
+    background-clip: border-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    z-index: 10;
 }
 .heart .far {
     transition: all 200ms linear;
@@ -451,10 +561,16 @@ h2 {
 }
 .heart .fas:hover {
     cursor: pointer;
-    background: linear-gradient( #ff79da, #9356dc, transparent);
+    transition: 300ms ease-in-out;
+    font-size: 25px;
+    background: linear-gradient(#FF79DA, #9356DC);
+    background-clip: border-box;
     background-clip: border-box;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: #FF79DA;
+    -webkit-text-fill-color: transparent;
+    transform-origin: bottom;
+    transform: scale(1.1);
+    z-index: 1;
 }
 .heart .fas {
     color: transparent;
@@ -462,8 +578,17 @@ h2 {
     inset: 0px;
     font-size: 1.5rem;
     text-align: center;
-    }
-/**Menu**/
+}
+.Underline {
+    height: 2px;
+    width: 18px;
+    background-color: #99E2D0;
+    padding-left: 25px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    left: 20px;
+}
+    /**Menu**/
 .Menu {
     flex: 1;
     display: flex;
@@ -472,6 +597,26 @@ h2 {
     justify-content: space-between;
     background-color: #F6F6F6;
     padding:  2px 10px 0 10px;
+}
+
+.Description {
+    animation-name: Description;
+    animation-duration: 3000ms;
+    animation-delay: 500ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+@keyframes Description {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    };
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    
 }
 /**Carte**/
 .carte {
@@ -485,6 +630,7 @@ h2 {
     overflow: hidden;
 }
 .Liste {
+    margin-top: 20px;
     margin-bottom: 15px;
     display: flex;
     background-color: #FFFFFF;
@@ -496,7 +642,7 @@ h2 {
     overflow: hidden;
     animation: loading-list 0.6s both;
 }
-/****/
+/**Loading liste**/
 @keyframes loading-Liste {
     0% {
         opacity: 0;
@@ -517,10 +663,6 @@ h2 {
     text-overflow: ellipsis;
     overflow: hidden;
  
-}
-.Liste .Description h4, p {
-    margin: 0px;
-    padding: 10px;
 }
 .Liste .Prix {
     font-weight: bold;
@@ -551,7 +693,6 @@ h2 {
     transition: all 400ms ease-in-out;
     transform: rotate(360deg);
 }
-
 .ordre {
     background-color: #F6F6F6;
     text-align: center;
