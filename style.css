@@ -122,12 +122,14 @@ Html, body {
     .Map_recherche {
         width: 100%;
     }
-    .Liste .description h3, .Liste .description p {
-        margin: 0px;
-        padding: 10px 5px;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+    .Description p {
+        white-space: nowrap; 
+        padding: 5px;
+        margin: 0px; 
         overflow: hidden;
+        text-overflow: ellipsis;
+        margin-block: 0px;
+        line-height: 22px;
     }
     #footer {
         color: #353535;
