@@ -599,8 +599,8 @@ input.text {
 }
 .Menu {
     animation-name: Menu;
-    animation-duration: 3000ms;
-    animation-delay: 500ms;
+    animation-duration: 1000ms;
+    animation-delay: 200ms;
     animation-timing-function: ease-in-out;
     animation-iteration-count: 1;
 }
